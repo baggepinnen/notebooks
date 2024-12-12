@@ -318,7 +318,7 @@ anim = @animate for i in 1:length(t)
 	xm, ym = sol.y[i] 		# Noisy measurement
 	xf, yf = Xmean[i, 1:2]  # Mean of filtered estimate
 	plot([0, x], [0, y], m=:circle, markersize=[3, 15], ratio=:equal, label="True", l=7)
-	plot!([0, x], [0, y], m=:circle, markersize=[3, 15], ratio=:equal, label="Estimate", c=:purple, l=(2))
+	plot!([0, xf], [0, yf], m=:circle, markersize=[3, 15], ratio=:equal, label="Estimate", c=:purple, l=(2))
 	scatter!([xm], [ym], m=(:circle, :red, 2), label="Noisy measurements", 
 	legend=:topright, xlims=(-1.1, 1.1), ylims=(-1.1, 0.2), grid=false, framestyle=:zerolines)
 end; giffig = gif(anim, "anim_fps30.gif", fps = 30)
