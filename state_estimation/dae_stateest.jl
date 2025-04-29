@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.26
+# v0.20.6
 
 using Markdown
 using InteractiveUtils
@@ -215,7 +215,7 @@ We then compute an initial condition and create an initial state distribution fr
 
 # ╔═╡ 8ad859e3-950d-4313-9820-ed437e3e2190
 begin
-	x0 = SeeToDee.initialize(discrete_dynamics, [1.0,0,0,0,0], p) # This makes susre that the initial condition satisfies the algebraic equation.
+	x0 = SeeToDee.initialize(discrete_dynamics, [1.0,0,0,0,0], [0, 0], p) # This makes susre that the initial condition satisfies the algebraic equation.
 	x0 = SVector(x0...)
 	d0 = MvNormal(x0, 0)   # Initial state Distribution, zero variance
 end;
